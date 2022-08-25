@@ -1,16 +1,15 @@
 {
   "files": {
-    "main.css": "/gitpubstatus/static/css/main.073c9b0a.css",
-    "main.js": "/gitpubstatus/static/js/main.df0b2145.js",
+    "main.css": "/gitpubstatus/static/css/main.59ceee6d.css",
+    "main.js": "/gitpubstatus/static/js/main.15149919.js",
     "static/js/787.76ed6fd2.chunk.js": "/gitpubstatus/static/js/787.76ed6fd2.chunk.js",
-    "static/media/logo.svg": "/gitpubstatus/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/gitpubstatus/index.html",
-    "main.073c9b0a.css.map": "/gitpubstatus/static/css/main.073c9b0a.css.map",
-    "main.df0b2145.js.map": "/gitpubstatus/static/js/main.df0b2145.js.map",
+    "main.59ceee6d.css.map": "/gitpubstatus/static/css/main.59ceee6d.css.map",
+    "main.15149919.js.map": "/gitpubstatus/static/js/main.15149919.js.map",
     "787.76ed6fd2.chunk.js.map": "/gitpubstatus/static/js/787.76ed6fd2.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.073c9b0a.css",
-    "static/js/main.df0b2145.js"
+    "static/css/main.59ceee6d.css",
+    "static/js/main.15149919.js"
   ]
 }
