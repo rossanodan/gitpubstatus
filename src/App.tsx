@@ -1,6 +1,47 @@
-import React, { useState, useEffect } from "react"
+import { useState, useEffect } from "react"
 import axios, { AxiosResponse } from "axios"
+
+import { Gif } from "./Gif"
+import { constants } from "./constants"
+
 import "./App.css"
+
+const renderGif = (indicator: string) => {
+  switch (indicator) {
+    case "none":
+      return (
+        <>
+          <Gif src="https://media.giphy.com/media/3ofSBoh8hXCs4wIvTi/giphy.gif" />
+          <p>{constants.STATUS_OK}</p>
+        </>
+      )
+    case "minor":
+      return (
+        <>
+          <Gif src="https://media.giphy.com/media/3ofSBoh8hXCs4wIvTi/giphy.gif" />
+          <p>{constants.STATUS_OK}</p>
+        </>
+      )
+    case "major":
+      return (
+        <>
+          <Gif src="https://media.giphy.com/media/QsyPRpG6WVR6SYfBVw/giphy.gif" />
+          <p>{constants.STATUS_OUTAGE}</p>
+        </>
+      )
+    case "critical":
+      return (
+        <>
+          <Gif src="https://media.giphy.com/media/1luXLMeNxsaNFMUuOe/giphy.gif" />
+          <p>
+            <strong className="Critical-Outage">CRITICAL OUTAGE</strong>{" "}
+            {constants.STATUS_OUTAGE}
+          </p>
+        </>
+      )
+    default:
+  }
+}
 
 const App = () => {
   const [ghStatus, setghStatus] = useState({
@@ -36,58 +77,27 @@ const App = () => {
       })
   }, [])
 
+  if (error && error.isError) {
+    return <p>{constants.ERROR}</p>
+  }
+
   return (
     <div className="App">
       <header className="App-header">
-        {error.isError && <p>Sorry, something is wrong! Try again later.</p>}
-        {ghStatus.indicator === "none" && (
-          <>
-            <img
-              src="https://media.giphy.com/media/3ofSBoh8hXCs4wIvTi/giphy.gif"
-              alt="gif"
-            />
-            <p>Everything looks good.. Sorry.. Get back to work!</p>
-          </>
-        )}
-        {ghStatus.indicator === "minor" && (
-          <>
-            <img
-              src="https://media.giphy.com/media/3ofSBoh8hXCs4wIvTi/giphy.gif"
-              alt="gif"
-            />
-            <p>Everything looks good.. Sorry.. Get back to work!</p>
-          </>
-        )}
-        {ghStatus.indicator === "major" && (
-          <>
-            <img
-              src="https://media.giphy.com/media/QsyPRpG6WVR6SYfBVw/giphy.gif"
-              alt="gif"
-            />
-            <p>It's pub time!</p>
-          </>
-        )}
-        {ghStatus.indicator === "critical" && (
-          <>
-            <img
-              src="https://media.giphy.com/media/1luXLMeNxsaNFMUuOe/giphy.gif"
-              alt="gif"
-            />
-            <p>
-              <strong className="Critical-Outage">CRITICAL OUTAGE</strong> It's
-              pub time!
-            </p>
-          </>
-        )}
+        {renderGif(ghStatus.indicator)}
         <small className="More-Detailed-Information">
-          For more detailed information about GitHub Status, visit{" "}
+          {constants.MORE_INFO}
           <a
             href="https://www.githubstatus.com/"
             target="_blank"
             rel="noreferrer"
+            className="More-Detailed-Information-URL"
           >
             https://www.githubstatus.com/
           </a>
+        </small>
+        <small className="Credits">
+          {new Date().getFullYear()} - {constants.AUTHOR_NAME}
         </small>
       </header>
     </div>

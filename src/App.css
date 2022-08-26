@@ -2,11 +2,6 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
 .Critical-Outage {
   color: red;
 }
@@ -15,10 +10,17 @@
   font-size: 15px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.More-Detailed-Information-URL {
+  color: white;
+}
+
+.More-Detailed-Information-URL:visited {
+  color: white;
+}
+
+.Credits {
+  font-size: 12px;
+  margin-top: 20px;
 }
 
 .App-header {
@@ -32,15 +34,6 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Gif {
+  max-width: 80%;
 }
