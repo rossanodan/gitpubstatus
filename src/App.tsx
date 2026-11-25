@@ -18,7 +18,7 @@ const renderGif = (indicator: string) => {
     case "minor":
       return (
         <>
-          <Gif src="https://media.giphy.com/media/3ofSBoh8hXCs4wIvTi/giphy.gif" />
+          <Gif src="https://media.giphy.com/media/QsyPRpG6WVR6SYfBVw/giphy.gif" />
           <p>{constants.STATUS_OK}</p>
         </>
       )
